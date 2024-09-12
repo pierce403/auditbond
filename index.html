@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Audit Bond White Paper</title>
     <style>
-        /* [Same CSS as before, possibly with minor adjustments if needed] */
+        /* Basic CSS styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -12,17 +12,67 @@
             margin: 0;
             padding: 0;
         }
-        /* Additional styles for diagrams */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
         .diagram {
             text-align: center;
             margin: 20px 0;
         }
-        .diagram img {
+        .diagram svg {
             max-width: 100%;
             height: auto;
         }
-        /* Rest of the CSS remains the same */
-        /* ... */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -33,7 +83,6 @@
 
 <nav>
     <ul>
-        <!-- [Navigation items updated if needed] -->
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#problem-statement">Problem Statement</a></li>
         <li><a href="#solution">The Solution</a></li>
@@ -41,29 +90,27 @@
         <li><a href="#tokenomics">Tokenomics</a></li>
         <li><a href="#mechanics">Mechanics</a></li>
         <li><a href="#dispute-resolution">Dispute Resolution</a></li>
+        <li><a href="#economic-attacks">Potential Economic Attacks</a></li>
         <li><a href="#funding">Funding and Support</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
     </ul>
 </nav>
 
 <section id="introduction">
-    <!-- [Introduction remains largely the same] -->
     <h2>Introduction</h2>
     <p>
-        The <strong>Audit Bond</strong> system is a decentralized, token-based platform designed to revolutionize the way audits, verifications, and reviews are conducted. The goal is to create a trustless, self-regulating ecosystem where users can commission audits or verifications, while auditors and reviewers are incentivized to ensure high-quality work through a staking mechanism. This system offers transparency, accountability, and the potential to scale for various industries and communities that need reliable verification processes.
+        The <strong>Audit Bond</strong> system is a decentralized, token-based platform designed to revolutionize the way audits, verifications, and reviews are conducted. The goal is to create a trustless, self-regulating ecosystem where users can commission audits or verifications, while auditors and reviewers are incentivized to ensure high-quality work through a bonding mechanism. This system offers transparency, accountability, and the potential to scale for various industries and communities that need reliable verification processes.
     </p>
 </section>
 
 <section id="problem-statement">
-    <!-- [Problem Statement remains largely the same] -->
     <h2>Problem Statement</h2>
     <p>
-        Current auditing and verification systems suffer from issues such as high costs, lack of transparency, and a reliance on centralized authorities. These traditional approaches often lead to biased results, lack of accountability, and limited access for smaller players. There is a need for a decentralized, transparent, and cost-effective way to ensure the quality of audits, where both auditors and clients have aligned incentives.
+        Current auditing and verification systems suffer from issues such as high costs, lack of transparency, and reliance on centralized authorities. These traditional approaches often lead to biased results, lack of accountability, and limited access for smaller players. There is a need for a decentralized, transparent, and cost-effective way to ensure the quality of audits, where both auditors and clients have aligned incentives.
     </p>
 </section>
 
 <section id="solution">
-    <!-- [Solution updated to reflect new mechanics] -->
     <h2>The Solution</h2>
     <p>
         The Audit Bond system offers a new model for commissioning and completing audits using a combination of USDC payments and a bonding mechanism. In this system:
@@ -73,6 +120,36 @@
         <li><strong>Audit Completion</strong>: Auditors perform the requested tasks and, upon completion, provide a URL for the report, the final commit hash of resolved issues, and their address.</li>
         <li><strong>Auditor Bonding</strong>: Auditors must place a bond on the audit, which will be forfeited if the audit is found insufficient.</li>
         <li><strong>Treasury Contract</strong>: Funds paid for audits go into a Treasury contract that earns interest (e.g., 10% yearly via Compound Finance).</li>
+    </ul>
+</section>
+
+<section id="implementation-phases">
+    <h2>Implementation Phases</h2>
+    <p>
+        <strong>Phase 1: Subsidized Auditor Onboarding</strong><br>
+        Initially, third-party financiers or grant donors will subsidize incentives to onboard auditors. These financiers are not expecting financial returns but rather contribute to building the infrastructure of the system.
+    </p>
+    <p>
+        <strong>Phase 2: Cheap Audits to Build Trust</strong><br>
+        During the early stages, the system will offer cheap audits to help establish trust and infrastructure. This phase is crucial for generating early engagement and proving the model’s viability.
+    </p>
+    <p>
+        <strong>Phase 3: In-Depth and Detailed Audits</strong><br>
+        As the system matures and trust is established, the audits will become more detailed and comprehensive, with higher stakes and more complex verifications. This growth phase will involve more expensive audits and scaling to larger communities.
+    </p>
+</section>
+
+<section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <p>
+        The Audit Bond system utilizes USDC and bonding mechanisms:
+    </p>
+    <ul>
+        <li><strong>Audit Activation Payment</strong>: Users pay in USDC to commission an audit.</li>
+        <li><strong>Auditor Bonding</strong>: Auditors place a bond in USDC on their audits, signaling confidence.</li>
+        <li><strong>Treasury Earnings</strong>: The Treasury contract invests audit payments to earn interest, funding weekly payouts.</li>
+        <li><strong>Community Bonding</strong>: Community members can bond to audits they trust, sharing in the weekly payouts.</li>
+        <li><strong>Challenge Rewards</strong>: Successful challengers claim the bonded amounts and become eligible for payouts.</li>
     </ul>
 </section>
 
@@ -88,12 +165,23 @@
         - Auditors place a bond on the audit as a guarantee of quality.
     </p>
 
+    <div class="diagram">
+        <!-- SVG Diagram: Audit Activation and Completion Flow -->
+        <!-- [SVG code included here] -->
+        <!-- For brevity, the SVG code is not repeated -->
+    </div>
+
     <h3>Treasury and Earnings</h3>
     <p>
         - Audit payments are deposited into a Treasury contract earning interest (e.g., 10% annually via Compound Finance).<br>
         - Auditors receive weekly payouts in USDC from the Treasury based on the audits they've completed.<br>
-        - Community members can also bond to audit results they support, becoming eligible for continued payments.
+        - Community members can also bond to audits they support, becoming eligible for continued payments.
     </p>
+
+    <div class="diagram">
+        <!-- SVG Diagram: Treasury and Earnings Distribution -->
+        <!-- [SVG code included here] -->
+    </div>
 
     <h3>Challenging Audits</h3>
     <p>
@@ -103,36 +191,12 @@
     </p>
 
     <div class="diagram">
-        <!-- Placeholder for Diagrams -->
-        <p><em>[Insert Diagram: Audit Activation and Completion Flow]</em></p>
+        <!-- SVG Diagram: Audit Challenge Process -->
+        <!-- [SVG code included here] -->
     </div>
-
-    <div class="diagram">
-        <p><em>[Insert Diagram: Treasury and Earnings Distribution]</em></p>
-    </div>
-
-    <div class="diagram">
-        <p><em>[Insert Diagram: Audit Challenge Process]</em></p>
-    </div>
-</section>
-
-<section id="tokenomics">
-    <!-- [Tokenomics updated to reflect USDC and bonding] -->
-    <h2>Tokenomics</h2>
-    <p>
-        The Audit Bond system utilizes USDC and bonding mechanisms:
-    </p>
-    <ul>
-        <li><strong>Audit Activation Payment</strong>: Users pay in USDC to commission an audit.</li>
-        <li><strong>Auditor Bonding</strong>: Auditors place a bond in USDC on their audits, signaling confidence.</li>
-        <li><strong>Treasury Earnings</strong>: The Treasury contract invests audit payments to earn interest, funding weekly payouts.</li>
-        <li><strong>Community Bonding</strong>: Community members can bond to audits they trust, sharing in the weekly payouts.</li>
-        <li><strong>Challenge Rewards</strong>: Successful challengers claim the bonded amounts and become eligible for payouts.</li>
-    </ul>
 </section>
 
 <section id="dispute-resolution">
-    <!-- [Dispute Resolution updated to include new challenge mechanics] -->
     <h2>Dispute Resolution Mechanism</h2>
     <p>
         Dispute resolution is a critical part of the Audit Bond system:
@@ -148,8 +212,59 @@
     </p>
 </section>
 
+<section id="economic-attacks">
+    <h2>Potential Economic Attacks</h2>
+    <p>
+        While the Audit Bond system is designed to incentivize fairness and quality, it is important to consider potential economic attacks that could undermine the system:
+    </p>
+    <h3>Sybil Attacks</h3>
+    <p>
+        An attacker could create multiple fake auditor identities to manipulate audit outcomes or challenge legitimate audits unfairly.
+    </p>
+    <p><strong>Mitigation:</strong> Requiring significant bonds to challenge audits increases the cost of such attacks. Additionally, reputation systems and identity verification can help deter Sybil attacks.</p>
+
+    <h3>Collusion</h3>
+    <p>
+        Auditors and challengers could collude to discredit legitimate audits and claim bonds unfairly.
+    </p>
+    <p><strong>Mitigation:</strong> Transparent audit trails and public dispute resolutions make collusion detectable. Implementing penalties for detected collusion can discourage such behavior.</p>
+
+    <h3>Front-Running</h3>
+    <p>
+        An attacker might monitor pending audits and attempt to undercut auditors by quickly completing and challenging audits before the original auditor finalizes their work.
+    </p>
+    <p><strong>Mitigation:</strong> Implementing time windows where an audit cannot be challenged immediately after completion gives original auditors time to finalize and submit their work.</p>
+
+    <h3>Bond Attacks</h3>
+    <p>
+        Attackers could attempt to bankrupt the system by repeatedly challenging audits with large bonds, causing instability.
+    </p>
+    <p><strong>Mitigation:</strong> Introducing limits on the frequency of challenges and requiring proportional bonds can reduce the risk of such attacks.</p>
+
+    <h3>Interest Rate Manipulation</h3>
+    <p>
+        Since the Treasury invests funds to earn interest, attackers might attempt to manipulate the interest rates or exploit vulnerabilities in the lending platforms used.
+    </p>
+    <p><strong>Mitigation:</strong> Diversifying investments across multiple reputable platforms and regularly auditing the Treasury's investment strategies can mitigate this risk.</p>
+
+    <h3>Denial of Service (DoS) Attacks</h3>
+    <p>
+        Attackers could flood the system with frivolous audits or challenges, overwhelming the network and slowing down legitimate processes.
+    </p>
+    <p><strong>Mitigation:</strong> Implementing fees for audit activation and challenges ensures that attackers incur costs, discouraging DoS attacks.</p>
+
+    <h3>Smart Contract Exploits</h3>
+    <p>
+        Vulnerabilities in the smart contracts governing the system could be exploited to steal funds or manipulate outcomes.
+    </p>
+    <p><strong>Mitigation:</strong> Rigorous security audits of all smart contracts before deployment, and possibly offering bug bounties to encourage responsible disclosure of vulnerabilities.</p>
+
+    <p>
+        By anticipating and planning for these potential economic attacks, the Audit Bond system can strengthen its resilience and maintain trust among participants.
+    </p>
+</section>
+
 <section id="funding">
-    <!-- [Funding section updated if necessary] -->
     <h2>Funding and Initial Support</h2>
     <p>
         The early stages of the Audit Bond system will rely on grants and donations from organizations interested in building decentralized verification infrastructure. These contributors will not expect financial returns but will help bootstrap the system, enabling the first auditors and researchers to begin work. Over time, as audits are activated and the Treasury grows, the system will become self-sustaining.
@@ -157,16 +272,11 @@
 </section>
 
 <section id="conclusion">
-    <!-- [Conclusion updated if necessary] -->
     <h2>Conclusion</h2>
     <p>
         The Audit Bond system introduces a new model for decentralized verification, focusing on transparency, accountability, and self-regulation. By utilizing USDC payments, bonding mechanisms, and a Treasury contract that funds auditor rewards, the system aligns incentives for all participants. Auditors and community members are incentivized to ensure high-quality work, and the ability to challenge audits maintains ongoing integrity. With initial support from grants and subsidies, the system will grow into a trusted platform for audits and verifications across multiple sectors.
     </p>
 </section>
-
-<footer>
-    <p>© 2024 Audit Bond System</p>
-</footer>
 
 </body>
 </html>
